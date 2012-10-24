@@ -14,3 +14,14 @@ Thanks to the following people (ordered by name):
 
 * [@marekjelen](https://github.com/marekjelen)
 * [@venu](https://github.com/venu)
+
+Todos
+-----
+
+This is stuff which needs to be done right now. Feel free to do a pull request!
+
+* Add install script
+* Add config description
+* Add install docs
+* Add description of what gets installed and how
+* (Add link to blog with more in-depth explanation)
