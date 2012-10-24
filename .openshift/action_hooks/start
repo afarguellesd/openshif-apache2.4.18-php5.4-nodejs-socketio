@@ -2,6 +2,11 @@
 # The logic to start up your application should be put in this
 # script. The application will work only if it binds to
 # $OPENSHIFT_INTERNAL_IP:8080
+
+# Make install script executable
+chmod +x $OPENSHIFT_REPO_DIR/misc/install.sh > /dev/null 2>&1
+
+# Start apache if present
 if [ -d "$OPENSHIFT_RUNTIME_DIR/srv/httpd" ]; then
     $OPENSHIFT_RUNTIME_DIR/srv/httpd/bin/apachectl start > $OPENSHIFT_LOG_DIR/server.log 2>&1 &
 fi
