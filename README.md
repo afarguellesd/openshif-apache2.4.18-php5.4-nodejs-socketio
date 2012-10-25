@@ -20,7 +20,6 @@ Todos
 
 This is stuff which needs to be done right now. Feel free to do a pull request!
 
-* Add install script
 * Add config description
 * Add install docs
 * Add description of what gets installed and how
