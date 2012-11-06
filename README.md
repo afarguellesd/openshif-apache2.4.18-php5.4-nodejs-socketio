@@ -24,6 +24,11 @@ The script does not remove the source files, so you can easily recompile
 Apache or PHP. Have a look at the shell script to see with which options
 both were compiled the first time.
 
+The misc/httpconf.py script takes the httpd.conf from misc/templates and
+replaces some variables with the actual folder pathes (because these 
+depend on the application, they cannot be hardcoded). It then copies
+the file into the apache conf folder.
+
 Usage
 -----
 
@@ -39,6 +44,7 @@ To get PHP 5.4 working at OpenShift, you have to do the following:
 7. Wait (This may take at least an hour)
 8. Open http://appname-namespace.rhcloud.com/phpinfo.php to verify running 
    apache
+9. You can remove the misc content
 
 Thanks
 ------
