@@ -28,7 +28,7 @@
 # same ServerRoot for multiple httpd daemons, you will need to change at
 # least PidFile.
 #
-ServerRoot "{{OPENSHIFT_RUNTIME_DIR}}srv/httpd"
+ServerRoot "{{OPENSHIFT_RUNTIME_DIR}}/srv/httpd"
 
 #
 # Mutex: Allows you to set the mutex mechanism and mutex file directory
@@ -326,7 +326,7 @@ LogLevel warn
     # client.  The same rules about trailing "/" apply to ScriptAlias
     # directives as to Alias.
     #
-    ScriptAlias /cgi-bin/ "{{OPENSHIFT_RUNTIME_DIR}}srv/httpd/cgi-bin/"
+    ScriptAlias /cgi-bin/ "{{OPENSHIFT_RUNTIME_DIR}}/srv/httpd/cgi-bin/"
 
 </IfModule>
 
@@ -342,7 +342,7 @@ LogLevel warn
 # This should be changed to whatever your ScriptAliased
 # CGI directory exists, if you have that configured.
 #
-<Directory "{{OPENSHIFT_RUNTIME_DIR}}srv/httpd/cgi-bin">
+<Directory "{{OPENSHIFT_RUNTIME_DIR}}/srv/httpd/cgi-bin">
     AllowOverride None
     Options None
     Require all granted
