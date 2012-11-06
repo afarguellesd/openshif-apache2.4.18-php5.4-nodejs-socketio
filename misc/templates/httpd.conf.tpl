@@ -28,7 +28,7 @@
 # same ServerRoot for multiple httpd daemons, you will need to change at
 # least PidFile.
 #
-ServerRoot "/var/lib/stickshift/98ca7da1d5ea4cbda29ee96f1db4beca/php54/runtime//srv/httpd"
+ServerRoot "{{OPENSHIFT_RUNTIME_DIR}}srv/httpd"
 
 #
 # Mutex: Allows you to set the mutex mechanism and mutex file directory
@@ -326,7 +326,7 @@ LogLevel warn
     # client.  The same rules about trailing "/" apply to ScriptAlias
     # directives as to Alias.
     #
-    ScriptAlias /cgi-bin/ "/var/lib/stickshift/98ca7da1d5ea4cbda29ee96f1db4beca/php54/runtime//srv/httpd/cgi-bin/"
+    ScriptAlias /cgi-bin/ "{{OPENSHIFT_RUNTIME_DIR}}srv/httpd/cgi-bin/"
 
 </IfModule>
 
@@ -339,10 +339,10 @@ LogLevel warn
 </IfModule>
 
 #
-# "/var/lib/stickshift/98ca7da1d5ea4cbda29ee96f1db4beca/php54/runtime//srv/httpd/cgi-bin" should be changed to whatever your ScriptAliased
+# This should be changed to whatever your ScriptAliased
 # CGI directory exists, if you have that configured.
 #
-<Directory "/var/lib/stickshift/98ca7da1d5ea4cbda29ee96f1db4beca/php54/runtime//srv/httpd/cgi-bin">
+<Directory "{{OPENSHIFT_RUNTIME_DIR}}srv/httpd/cgi-bin">
     AllowOverride None
     Options None
     Require all granted

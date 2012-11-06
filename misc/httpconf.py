@@ -5,7 +5,7 @@ runtimeDir = os.environ['OPENSHIFT_RUNTIME_DIR']
 repoDir = os.environ['OPENSHIFT_REPO_DIR']
 
 f = open(repoDir + 'misc/templates/httpd.conf.tpl', 'r')
-conf = f.read().replace('{{OPENSHIFT_INTERNAL_IP}}', internalIp).replace('{{OPENSHIFT_REPO_DIR}}', repoDir)
+conf = f.read().replace('{{OPENSHIFT_INTERNAL_IP}}', internalIp).replace('{{OPENSHIFT_REPO_DIR}}', repoDir).replace('{{OPENSHIFT_RUNTIME_DIR}}', runtimeDir)
 f.close()
 
 f = open(runtimeDir + '/srv/httpd/conf/httpd.conf', 'w')
