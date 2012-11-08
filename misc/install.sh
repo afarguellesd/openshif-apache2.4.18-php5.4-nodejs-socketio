@@ -54,8 +54,9 @@ mkdir $OPENSHIFT_RUNTIME_DIR/srv/php/etc/apache2
 # CLEANUP
 rm -r $OPENSHIFT_RUNTIME_DIR/tmp/*.tar.gz
 
-# COPY CONFIG
-cp $OPENSHIFT_RUNTIME_DIR/tmp/php-5.4.7/php.ini-development $OPENSHIFT_RUNTIME_DIR/srv/php/etc/apache2/php.ini
+# COPY TEMPLATES
+cp $OPENSHIFT_REPO_DIR/misc/templates/bash_profile.tpl $OPENSHIFT_HOMEDIR/app-root/data/.bash_profile
+cp $OPENSHIFT_REPO_DIR/misc/templates/php.ini.tpl $OPENSHIFT_RUNTIME_DIR/srv/php/etc/apache2/php.ini
 python $OPENSHIFT_REPO_DIR/misc/httpconf.py
 
 # START APACHE
