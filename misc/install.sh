@@ -47,7 +47,8 @@ cd php-5.4.7
 --prefix=$OPENSHIFT_RUNTIME_DIR/srv/php/ \
 --with-config-file-path=$OPENSHIFT_RUNTIME_DIR/srv/php/etc/apache2 \
 --with-layout=PHP \
---with-apxs2=$OPENSHIFT_RUNTIME_DIR/srv/httpd/bin/apxs
+--with-apxs2=$OPENSHIFT_RUNTIME_DIR/srv/httpd/bin/apxs \
+--enable-mbstring
 make && make install
 mkdir $OPENSHIFT_RUNTIME_DIR/srv/php/etc/apache2
 
