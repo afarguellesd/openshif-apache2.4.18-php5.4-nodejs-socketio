@@ -69,7 +69,7 @@ wget http://pecl.php.net/get/APC-3.1.13.tgz
 tar -zxf APC-3.1.13.tgz
 cd APC-3.1.13
 $OPENSHIFT_RUNTIME_DIR/srv/php/bin/phpize
-./config \
+./configure \
 --with-php-config=$OPENSHIFT_RUNTIME_DIR/srv/php/bin/php-config \
 --enable-apc \
 --enable-apc-debug=no
