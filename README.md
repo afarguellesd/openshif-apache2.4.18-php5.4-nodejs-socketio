@@ -40,7 +40,7 @@ To get PHP 5.4 working at OpenShift, you have to do the following:
    on the Openshift application page)
 4. Run `git push --force "openshift" master:master`
 5. SSH into your gear
-6. `nohup ./repo/misc/install.sh > $OPENSHIFT_LOG_DIR/install.log`
+6. `nohup $OPENSHIFT_REPO_DIR/misc/install.sh > $OPENSHIFT_DIY_LOG_DIR/install.log`
 7. Wait (This may take at least an hour)
 8. Open http://appname-namespace.rhcloud.com/phpinfo.php to verify running 
    apache
@@ -60,6 +60,4 @@ Todos
 This is stuff which needs to be done right now. Feel free to do a pull request!
 
 * Add config description
-* Add install docs
-* Add description of what gets installed and how
 * (Add link to blog with more in-depth explanation)

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+OPENSHIFT_RUNTIME_DIR=$OPENSHIFT_HOMEDIR/app-root/runtime
+OPENSHIFT_REPO_DIR=$OPENSHIFT_HOMEDIR/app-root/runtime/repo
+
 # INSTALL
 cd $OPENSHIFT_RUNTIME_DIR
 mkdir srv
