@@ -4,6 +4,6 @@
 # $OPENSHIFT_INTERNAL_IP:8080
 
 # Start apache if present
-if [ -d "$OPENSHIFT_RUNTIME_DIR/srv/httpd" ]; then
-    $OPENSHIFT_RUNTIME_DIR/srv/httpd/bin/apachectl start > $OPENSHIFT_LOG_DIR/server.log 2>&1 &
+if [ -d "$OPENSHIFT_HOMEDIR/app-root/runtime/srv/httpd" ]; then
+    $OPENSHIFT_HOMEDIR/app-root/runtime/srv/httpd/bin/apachectl start > $OPENSHIFT_DIY_LOG_DIR/server.log 2>&1 &
 fi
