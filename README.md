@@ -14,7 +14,7 @@ What's inside
 The misc/install.sh script installs:
 
 * Apache 2.4.3
-* PHP 5.4.7
+* PHP 5.4.7 (updated with zip, zlib and GD modules)
 
 It configures apache to have the diy folder as the document root. It also
 uses the php.ini-development from the php archive and moves it into the 

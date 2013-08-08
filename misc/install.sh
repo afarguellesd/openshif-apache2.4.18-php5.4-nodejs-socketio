@@ -50,6 +50,14 @@ chmod +x runConfigureICU configure install-sh
 --prefix=$OPENSHIFT_RUNTIME_DIR/srv/icu/
 make && make install
 cd ../..
+wget http://zlib.net/zlib-1.2.8.tar.gz
+tar -zxf zlib-1.2.8.tar.gz
+cd zlib-1.2.8
+chmod +x configure
+./configure \
+--prefix=$OPENSHIFT_RUNTIME_DIR/srv/zlib/
+make && make install
+cd ../..
 wget http://de2.php.net/get/php-5.4.7.tar.gz/from/this/mirror
 tar -zxf php-5.4.7.tar.gz
 cd php-5.4.7
@@ -58,6 +66,9 @@ cd php-5.4.7
 --prefix=$OPENSHIFT_RUNTIME_DIR/srv/php/ \
 --with-config-file-path=$OPENSHIFT_RUNTIME_DIR/srv/php/etc/apache2 \
 --with-layout=PHP \
+--with-zlib=$OPENSHIFT_RUNTIME_DIR/srv/zlib
+--with-gd \
+--enable-zip \
 --with-apxs2=$OPENSHIFT_RUNTIME_DIR/srv/httpd/bin/apxs \
 --enable-mbstring \
 --enable-intl \
