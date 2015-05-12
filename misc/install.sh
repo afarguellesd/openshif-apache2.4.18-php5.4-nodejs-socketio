@@ -11,21 +11,21 @@ mkdir srv/httpd
 mkdir srv/php
 mkdir tmp
 cd tmp/
-wget http://ftp.halifax.rwth-aachen.de/apache/httpd/httpd-2.4.3.tar.gz
-tar -zxf httpd-2.4.3.tar.gz
-wget http://artfiles.org/apache.org/apr/apr-1.4.6.tar.gz
-tar -zxf apr-1.4.6.tar.gz
-mv apr-1.4.6 httpd-2.4.3/srclib/apr
-wget http://artfiles.org/apache.org/apr/apr-util-1.5.1.tar.gz
-tar -zxf apr-util-1.5.1.tar.gz
-mv apr-util-1.5.1 httpd-2.4.3/srclib/apr-util
-wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.31.tar.gz
-tar -zxf pcre-8.31.tar.gz
-cd pcre-8.31
+wget http://ftp.halifax.rwth-aachen.de/apache/httpd/httpd-2.4.12.tar.gz
+tar -zxf httpd-2.4.12.tar.gz
+wget http://artfiles.org/apache.org/apr/apr-1.5.2.tar.gz
+tar -zxf apr-1.5.2.tar.gz
+mv apr-1.5.2 httpd-2.4.12/srclib/apr
+wget http://artfiles.org/apache.org/apr/apr-util-1.5.2.tar.gz
+tar -zxf apr-util-1.5.2.tar.gz
+mv apr-util-1.5.2 httpd-2.4.12/srclib/apr-util
+wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.37.tar.gz
+tar -zxf pcre-8.37.tar.gz
+cd pcre-8.37
 ./configure \
 --prefix=$OPENSHIFT_RUNTIME_DIR/srv/pcre
 make && make install
-cd ../httpd-2.4.3
+cd ../httpd-2.4.12
 ./configure \
 --prefix=$OPENSHIFT_RUNTIME_DIR/srv/httpd \
 --with-included-apr \
@@ -58,9 +58,9 @@ chmod +x configure
 --prefix=$OPENSHIFT_RUNTIME_DIR/srv/zlib/
 make && make install
 cd ../..
-wget http://de2.php.net/get/php-5.4.7.tar.gz/from/this/mirror
-tar -zxf php-5.4.7.tar.gz
-cd php-5.4.7
+wget http://de2.php.net/get/php-5.4.40.tar.gz/from/this/mirror
+tar -zxf php-5.4.40.tar.gz
+cd php-5.4.40
 ./configure \
 --with-libdir=lib64 \
 --prefix=$OPENSHIFT_RUNTIME_DIR/srv/php/ \
